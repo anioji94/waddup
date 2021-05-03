@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import Dashboard from './components/dashboard.js';
+import BudsScreen from './components/BudsScreen.js';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Swiper from 'react-native-swiper'
@@ -37,9 +38,9 @@ class Home extends React.Component {
 	render() {
 		return (
 			<NavigationContainer>
-				<Stack.Navigator initialRouteName="DetailsScreen">
+				<Stack.Navigator initialRouteName={BudsScreen}>
 					<Stack.Screen name="Home" component={Dashboard} />
-					{/* <Stack.Screen name="Details" component={DetailsScreen} /> */}
+					<Stack.Screen name="Buds" component={BudsScreen} />
 				</Stack.Navigator>
 			</NavigationContainer>
 
