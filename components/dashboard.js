@@ -1,15 +1,28 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 export default class Dashboard extends Component {
 	render() {
 		return(
-			<View>
-				<Text>Waddup!</Text>
+			<View style={styles.container}>
+				<View style={styles.main}>
+					<View style={{
+						padding: 20,
+					}}>
+						<Text style={{
+							fontWeight: 'bold',
+							fontSize: 30,
+						}}>
+							Recent
+						</Text>
+						<View style={styles.item}></View>
+					</View>
+				</View>
 			</View>
 		)
 	}
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -19,17 +32,18 @@ const styles = StyleSheet.create({
     padding: 20,
     margin: 10,
   },
-  top: {
+  item: {
     flex: 0.2,
     backgroundColor: "grey",
     borderWidth: 5,
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
+    borderRadius: 20,
+		padding: 20,
   },
-  middle: {
+  main: {
     flex: 1,
     backgroundColor: "beige",
     borderWidth: 5,
+		borderRadius: 20,
   },
   bottom: {
     flex: 0.3,
@@ -39,4 +53,3 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 20,
   },
 });
-

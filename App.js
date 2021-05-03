@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import Dashboard from './components/dashboard.js';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import Swiper from 'react-native-swiper'
 import randomcolor from 'randomcolor'
 
@@ -11,14 +13,14 @@ import randomcolor from 'randomcolor'
 // } = React
 
 
-class TitleText extends React.Component {
-  render() {
-    return (
-      <Text style={{ fontSize: 48, color: 'white' }}>
-        {this.props.label}
-      </Text>
-    )
-  }
+const Stack = createStackNavigator();
+
+const HomeScreen = () => {
+	return (
+		<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+			<Text>Home</Text>
+		</View>
+	);
 }
 
 class Home extends React.Component {
@@ -34,33 +36,12 @@ class Home extends React.Component {
 
 	render() {
 		return (
-			<Swiper
-				loop={false}
-				showsPagination={true}
-				index={1}>
-				{/* <View style={this.viewStyle()}>
-					<TitleText label="Waddup" />
-				</View> */}
-				<Dashboard />
-				{/* <Swiper
-					horizontal={false}
-					loop={false}
-					showsPagination={false}
-					index={1}>
-					<View style={this.viewStyle()}>
-						<TitleText label="Top" />
-					</View>
-					<View style={this.viewStyle()}>
-						<TitleText label="Home" />
-					</View>
-					<View style={this.viewStyle()}>
-						<TitleText label="Bottom" />
-					</View>
-				</Swiper> */}
-				<View style={this.viewStyle()}>
-					<TitleText label="Buds" /> 
-				</View>
-			</Swiper>
+			<NavigationContainer>
+				<Stack.Navigator initialRouteName="DetailsScreen">
+					<Stack.Screen name="Home" component={Dashboard} />
+					{/* <Stack.Screen name="Details" component={DetailsScreen} /> */}
+				</Stack.Navigator>
+			</NavigationContainer>
 
 			
 		)
