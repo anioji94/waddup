@@ -38,7 +38,7 @@ class Home extends React.Component {
 	render() {
 		return (
 			<NavigationContainer>
-				<Stack.Navigator initialRouteName={BudsScreen}>
+				<Stack.Navigator initialRouteName="Buds">
 					<Stack.Screen name="Home" component={Dashboard} />
 					<Stack.Screen name="Buds" component={BudsScreen} />
 				</Stack.Navigator>
