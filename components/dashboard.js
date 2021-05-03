@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import Message from './message';
 
 export default class Dashboard extends Component {
 	render() {
@@ -9,13 +10,10 @@ export default class Dashboard extends Component {
 					<View style={{
 						padding: 20,
 					}}>
-						<Text style={{
-							fontWeight: 'bold',
-							fontSize: 30,
-						}}>
+						<Text style={styles.header}>
 							Recent
 						</Text>
-						<View style={styles.item}></View>
+						<Message />
 					</View>
 				</View>
 			</View>
@@ -29,19 +27,22 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-between",
     backgroundColor: "#fff",
+		backgroundColor: "#009aff",
     padding: 20,
     margin: 10,
   },
   item: {
     flex: 0.2,
-    backgroundColor: "grey",
+    backgroundColor: "#009aff",
+		borderColor: 'white',
     borderWidth: 5,
     borderRadius: 20,
 		padding: 20,
   },
   main: {
     flex: 1,
-    backgroundColor: "beige",
+    backgroundColor: "#009aff",
+		borderColor: 'white',
     borderWidth: 5,
 		borderRadius: 20,
   },
@@ -52,4 +53,16 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
   },
+	// Text styles
+	header: {
+		fontWeight: 'bold',
+		fontSize: 30,
+		color: 'white',
+	},
+	header2: {
+		fontWeight: 'bold',
+		fontSize: 20,
+		color: 'white',
+		padding: 20,
+	},
 });
